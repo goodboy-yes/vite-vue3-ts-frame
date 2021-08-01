@@ -16,6 +16,28 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    'vue/no-multiple-template-root': 'off' // 解决.vue文件中'The template root requires exactly one element.'eslint报错
+    'vue/no-multiple-template-root': 'off', // 解决.vue文件中'The template root requires exactly one element.'eslint报错
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // 解决'×××'should be listed in the project's dependencies, not devDependencies.eslint报错
+    // 'import/no-absolute-path': 'off',
+    'import/no-unresolved': 'off', // 解决Unable to resolve path to module ××× 的eslint报错
+    // 解决Missing file extension for ts 的报错
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never'
+      }
+    ]
+  },
+  settings: {
+    // 解决Missing file extension for ts 的报错
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.vue']
+      }
+    }
   }
 }
