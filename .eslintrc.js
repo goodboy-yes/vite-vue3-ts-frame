@@ -7,7 +7,8 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     'airbnb-base',
-    'plugin:prettier/recommended' // 添加 prettier 插件,ESLint 就会按照 Prettier 的配置规则来格式化代码,Prettier 配置规则 > ESLint 配置规则。
+    'plugin:prettier/recommended', // 添加 prettier 插件,ESLint 就会按照 Prettier 的配置规则来格式化代码,Prettier 配置规则 > ESLint 配置规则。
+    'plugin:jest/recommended'
   ],
   parserOptions: {
     ecmaVersion: 12,
